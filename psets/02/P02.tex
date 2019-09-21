@@ -507,10 +507,67 @@
             \frac{10\sqrt{5} - 6\sqrt{3}}{3\sqrt{2}} + \frac{4 + 8\sqrt{2}}{3} $$
 
         %Ejercicio 9%
-        \item \textbf{[Alex]}
+        \item integrar $x^2+y^2+z^2$  sobre el cilindro $x^2+^2 \leq 2 $, $ -2\leq z \leq 3$
+    	\\ \textbf{Solución:}
+            	\begin{equation*}
+                \begin{split}
+                        & 
+                        \iiint_W{f(x,y,z) \,d x \,d y \,d z}
+                        = \iiint_W{f(r \cos{ \thteha} , r \sin{\theta},z)r \, d r \,d\theta \,dz}
+                        \\& \mbox{Entonces}
+                        \\& x= r \cos{\theta} \,\,\, y = r \sin{\theta} \,\,\, z =z
+                        \\& \mbox{con r el determinandte jacobiano.}
+                        \mbox{Como $x^2+y^2 \leq 2$ , tenemos un circulo  }
+                        \\&  0 \leq \theta \leq 2\pi \,\,\, 0 \leq z \leq \sqrt{2} \sqrt{2}
+                        \\& \mbox{ademas $ -2\leq z \leq 3$ }
+                        \\& \Rightarrow\,\int_0^{\sqrt{2}}{\int_0^{2\pi}{ \int_{-2}^{3}{ r(r^2 \cos^2 \theta + r^2 + \sin ^2 \theta +z^2)}} }\,dz\,d\theta\,dr
+                        \\& = \int_0^{\sqrt{2}}{\int_0^{2\pi}{ \int_{-2}^{3}{ r( r^2 + z^2 )}} }\,dz\,d\theta\,d r
+                        = \int_0^{\sqrt{2}}{\int_0^{2\pi}{ \int_{-2}^{3}{ (r^3 + r z^2 )}} }\,dz\,d\theta\,d r
+                        \\&= \int_0^{\sqrt{2}}{\int_0^{2\pi}{ (r^3\int_{-2}^{3} \, dz +r\int_{-2}^{3}{z} \,dz)} }\,d\theta\, d r
+                        = \int_0^{\sqrt{2}}{\int_0^{2\pi}{( r^3 \left[z\right]_{-2}^3 + r \left[\frac{z^2}{2}\right]_{-2}^3} )}\,d\theta\,d r
+                        \\& = \int_0^{\sqrt{2}} {\int_0^{2\pi}{ (r^3 (3-(-2))+ r (\frac{27}{3} - (-\frac{8}{3}) ) } )}\,d\theta\,d r
+                        = \int_0^{\sqrt{2}}{\int_0^{2\pi}{ (5 r^3 +r\frac{35}{3}}) }\,d\theta\,d r
+                        \\&= \int_0^{\sqrt{2}}{( 5r^3 \int_0^{2\pi}{  } \,d\theta + r \frac{35}{3} \int_0^{2\pi}{ } )}\,d r
+                        = \int_0^{\sqrt{2}}{ ( 5r^3 \left[\theta\right]_{0}^{2\pi} + r \frac{35}{3} \left[\theta\right]_{0}^{2\pi}}\,d r)
+                        \\&= \int_0^{\sqrt{2}}{ (5r^3 (2\pi)  + r \frac{35}{3} (2\pi))}\,d r
+                        = \int_0^{\sqrt{2}}{5r^3 (2\pi) }\,d r + \int_0^{\sqrt{2}}{ r \frac{35}{3} (2\pi)}\,d r
+                        \\& = 10\pi \int_0^{\sqrt{2}}{r^3 }\,d r + 
+                        \frac{70\pi}{3} \int_0^{\sqrt{2}}{r}\,d r
+                        = 10\pi \left[\frac{r^4}{4}\right]_0^{\sqrt{2}} + \frac{70\pi}{3} \left[\frac{r^2}{2}\right]_0^{\sqrt{2}}
+                        \\& = 10\pi (\frac{(\sqrt{2})^2}{4} - 0) + 
+                        \frac{70\pi}{3} (\frac{(\sqrt{2})^2}{2}-0)
+                        = 10\pi + \frac{70\pi}{3}
+                        \\& = \frac{30\pi}{3} + \frac{70\pi}{3} 
+                        = \frac{70\pi}{3}
+                \end{split}
+                \end{equation*}
 
         %Ejercicio 10%
-        \item \textbf{[Alex]}                                      
+        \item Calcular $\iint_D{x+y} \, dx\,dy$ , donde D es el cuadrado con veritcs en (0,0),(1,2),(3,1) y (2,-1)
+    	\\ \textbf{Solución:}
+            	\begin{equation*}
+                \begin{split}
+                        & 
+                        \iint_D{x+y} \, dx\,dy
+                        \\& \mbox{Por pitagoras vemos que de (0,0) al punto (1,2) hay $\sqrt{1^2 + 2^2 } = \sqrt{5}$ con esto}
+                        \\& \mbox{Podemos ver que el cuadrado generado en el plano tiene como lado $\sqrt{5}$ }
+                        \\& \mbox{asi :} D = [0,\sqrt{5}] \times [0,\sqrt{5}]
+                        \\& \int_{0}^{\sqrt{5}}{\int_{0}^{\sqrt{5}}{(x+y )}\,dy}\,dx
+                        =\int_{0}^{\sqrt{5}}{(\int_{0}^{\sqrt{5}}{x}\,dy +\int_{0}^{\sqrt{5}}{y}\,dy)}\,dx
+                        \\& =\int_{0}^{\sqrt{5}}{(x \left[y\right]_0^{\sqrt{5}} +\left[\frac{y^2}{2}\right]0^{\sqrt{5}})}\,dx
+                        =\int_{0}^{\sqrt{5}}{( x(\sqrt{5}-0) +(\frac{5}{2}-0)) }\,dx
+                        \\& =\int_{0}^{\sqrt{5}}{(\sqrt{5}x +\frac{5}{2})}\,dx
+                        =\int_{0}^{\sqrt{5}}{\sqrt{5} x }\,dx+\int_{0}^{\sqrt{5}}{\frac{5}{2}}\,dx
+                        \\& =\sqrt{5} \int_{0}^{\sqrt{5}}{ x }\,dx+\frac{5}{2} \int_{0}^{\sqrt{5}}{ 1 }\,dx
+                        =\sqrt{5} \left[\frac{x^2}{2}\right]_0^{\sqrt{5}} + \frac{5}{2} \left[x\right]_0^{\sqrt{5}}
+                        \\& =\sqrt{5} (\frac{5}{2}-0) + \frac{5}{2} (\sqrt{5}-0)
+                        =\frac{5\sqrt{5}}{2} + \frac{5\sqrt{5}}{2}
+                        \\& = \frac{5\sqrt{5} + 5\sqrt{5} }{2}
+                        = \frac{10\sqrt{5}}{2} 
+                        = 5\sqrt{5} 
+                \end{split}
+                \end{equation*}
+		
     \end{enumerate}
         
 \end{document}
