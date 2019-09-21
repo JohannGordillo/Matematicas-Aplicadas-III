@@ -114,10 +114,10 @@
         Únicamente falta ver que la transformación sea una inyección. Analizando el comportamiento de la transformación y las regiones $D^*$ y $D$, podemos intuir que sí lo es. Pero hay que dar una demostración formal:
         \begin{proof}
         \vspace{0.2cm}
-        Sean $(u,v), (u', v') \in D^*$.\\
-        Supongamos que $T(u, v) = T(u', v')$.\\
+        Sean $(u,v), (u', v') \in D^*$.\\\\
+        Supongamos que $T(u, v) = T(u', v')$.\\\\
         $\Rightarrow (-u^2 + 4u, v) = (-(u')^2 + 4u', v')$.\\
-        $\therefore -u^2 + 4u = -(u')^2 + 4u'$ y adeáas $v = v'$.\\\\
+        $\therefore -u^2 + 4u = -(u')^2 + 4u'$ y además $v = v'$.\\\\
         Como $v = v'$, falta probar que $u = u'$.\\
         Despejando: $-u^2 + 4u + (u')^2 - 4u' = 0$\\
         Aplicando la fórmula general para ecuaciones de segundo grado con variables\\
@@ -131,7 +131,7 @@
         $\therefore u = u'$\\
         $\therefore (u, v) = (u', v')$\\\\
         $\therefore T$ es una inyección.\\
-		\end{proof}          
+		\end{proof} 
         
         %Ejercicio 3%
         \item Sea $D^* = [0,1]$ x $[0, 1]$ y defínase $T$ en $D^*$ mediante $T(x^*, y^*) = (x^*y^*, x^*).$\\
@@ -155,13 +155,70 @@
         $\Rightarrow \gamma_4$ es el origen $(0, 0)$.\\
         Lo que obténemos son tres rectas que forman la región triángular $D$ con vértices $(0,0)$, $(0,1)$ y $(1, 1)$.\\\\   
         Únicamente falta ver que la transformación sea una inyección. Analizando el comportamiento de la transformación y las regiones $D^*$ y $D$, podemos intuir que no lo es, ya que todos los puntos de la recta $c_4$ son mapeados al origen por la transformación $T$.\\\\
-        Sin embargo, podemos hacer que la transformación sea inyectiva eliminando únicamente a la recta $c_4$ del dominio de la transformación.            
+        Sin embargo, podemos hacer que la transformación sea inyectiva eliminando únicamente a la recta $c_4$ del dominio de la transformación.\\\\           
 
         %Ejercicio 4%
         \item \textbf{[Erick]}
 
         %Ejercicio 5%
-        \item \textbf{[Raymundo]}
+        \item Determinar el determinante del Jacobiano para las coordenadas esféricas.\\\\
+        Tenemos que:\\
+        $x = \rho sin\phi cos\theta$\\ 
+        $y = \rho sin\phi sin\theta$\\ 
+        $z = \rho cos\phi$\\\\
+        Ahora solo nos resta calcular el determinante y aplicar el valor absoluto:\\
+        \[
+        J =
+        \begin{vmatrix}
+        \frac{\partial}{\partial \rho} \rho sin\phi cos\theta & 
+        \frac{\partial}{\partial \theta} \rho sin\phi cos\theta & 
+        \frac{\partial}{\partial \phi} \rho sin\phi cos\theta \\ 
+        \frac{\partial}{\partial \rho} \rho sin\phi sin\theta & 
+        \frac{\partial}{\partial \theta} \rho sin\phi sin\theta & 
+        \frac{\partial}{\partial \phi} \rho sin\phi sin\theta \\
+        \frac{\partial}{\partial \rho} \rho cos\phi & 
+        \frac{\partial}{\partial \theta} \rho cos\phi & 
+        \frac{\partial}{\partial \phi} \rho cos\phi
+        \end{vmatrix}
+        \] 
+
+		\[        
+        =
+        \begin{vmatrix}
+        sin\phi cos\theta & 
+        - sin\phi sin\theta & 
+        \rho cos\phi cos\theta \\ 
+        sin\phi sin\theta & 
+        \rho sin\phi cos\theta & 
+        \rho cos\phi sin\theta \\
+        cos\phi & 
+        0 & 
+        - \rho sin\phi
+        \end{vmatrix}
+        \] 
+        
+		\[=  cos \phi 
+        \begin{vmatrix}
+        - \rho sin \phi sin \theta &
+        \rho cos \phi cos \theta \\
+        \rho sin \phi cos \theta &
+        \rho cos \phi sin \theta
+        \end{vmatrix} 
+        - \rho sin \phi 
+        \begin{vmatrix}
+        sin \phi cos \theta &
+        \rho sin \phi sin \theta \\
+        sin \phi sin \theta &
+        \rho sin \phi cos \theta
+        \end{vmatrix}
+        \]
+      	$= - \rho^2 cos^2 \phi sin \phi sin^2 \theta - \rho^2 cos^2 \phi sin \phi cos^2 \theta - \rho^2 sin^3 \phi cos^2 \theta - \rho^2 sin^3 \phi sin^2 \theta$\\\\
+      	$= - \rho^2 cos^2 \phi sin \phi - \rho^2 \sin^3 \phi$\\\\
+      	$= - \rho^2 sin \phi (cos^2 \phi + sin^2 \phi)$\\\\
+      	$= - \rho^2 sin \phi$\\\\
+      	Al aplicar el valor absoluto, tenemos:\\\\
+      	$\rho^2 sin \phi$\\\\
+      	$\therefore J = \rho^2 sin \phi$  es el determinante del jacobiano.\\\\
         
         %Ejercicio 6%
         \item \textbf{[Erick]}
