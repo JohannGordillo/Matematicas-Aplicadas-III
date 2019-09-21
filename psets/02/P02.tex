@@ -87,8 +87,43 @@
     \begin{enumerate}
 
         %Ejercicio 1%
-        \item \textbf{[Raymundo]}
-
+        \item Sea $S^* = (0,1]$ x $[0, 2\pi)$ y sea $T(r, \theta) = (r cos \theta, r sin \theta)$.\\
+        Hallar la imagen del conjunto $S$.\\
+        Demostrar que $T$ es inyectiva en $S^*$.\\\\
+        Primero hallemos la imagen:\\
+        $\lbrace (x, y) \in R^2 | \exists (r, \theta) \in S^* (T(r, \theta) = (x,y)) \rbrace$\\\\
+        Sea $(x, y) = (r cos \theta, r sin \theta)$\\\\
+        Entonces:\\
+        $x = r cos \theta$\\
+        $y = r sin \theta$\\\\
+        Luego, 
+        \begin{equation*}
+        \begin{split}
+        x^2 + y^2 & = r^2 cos^2 \theta + r^2 sin^2 \theta \\
+        & = r^2 (cos^2 \theta + sin^2 \theta) \\
+        & = r^2 (1) \\
+        & = r^2  
+        \end{split}
+        \end{equation*}
+        Sabemos que $0 < r \leq 1$, así que $0 < r^2 \leq 1$.\\\\
+        $\therefore 0 < x^2 + y^2 \leq 1$\\\\
+        Es decir, $x^2 + y^2 \leq 1$ y $x^2 + y^2 > 0$.\\\\
+        Sabemos que $x^2 + y^2 = 0 \Leftrightarrow x = 0 = y$, por lo que excluimos de la imagen al origen $(0, 0)$.\\\\
+        Finalmente, $x^2 + y^2 = 1$ es el disco unitario, por lo que el conjunto S serán los puntos del disco unitario exceptuando al origen. Falta únicamente probar que T es una inyección.\\
+        \begin{proof}
+        \vspace{0.2cm}
+        Sean $(r,\theta), (r', \theta') \in S^*$.\\\\
+        Supongamos que $T(r,\theta) = T(r', \theta')$.\\\\
+        $\Rightarrow (r cos \theta, r sin \theta) = (r' cos \theta', r' sin \theta')$.\\
+        $\therefore r cos \theta = r' cos \theta'$ y además $r sin \theta = r' sin \theta'$.\\\\
+        Esto ocurre $\Leftrightarrow (r = r')$ o bien si $r = r'$ y $\theta = \theta' + 2 \pi k$ con $k \in Z$\\\\
+        Al ser $0 < r \leq 1$, $r = r'$.\\\\
+        Además, $0 \leq \theta < 2 \pi$, por lo que $k = 0$ y $\theta = \theta'$.\\\\
+        $\therefore (r,\theta), (r', \theta')$\\\\
+        $\therefore T$ es una inyección.\\
+		\end{proof} 
+	
+		\newpage
         %Ejercicio 2%
         \item Sea $D^* = [0,1]$ x $[0, 1]$ y defínase $T$ en $D^*$ mediante $T(u, v) = (-u^2 - 4u, v).$\\
         Hallar la imagen $D$.\\
@@ -105,7 +140,7 @@
         $\gamma_2(t) = T(c_2(t)) = T(1, t) = (-1 + 4, t) = (3, t)$\\
 		$\gamma_3(t) = T(c_3(t)) = T(t, 1) = (-t^2 + 4t, 1)$\\        
         $\gamma_4(t) = T(c_4(t)) = T(0, t) = (0, t)$\\
-        con $t \in [0,1]$.\\\\
+        con $t \in [0,1]$.\\
         $\Rightarrow \gamma_1$ es la recta del punto $(0,1)$ al punto $(3,1)$.\\
         $\Rightarrow \gamma_2$ es la recta del punto $(0,0)$ al punto $(0,1)$.\\
         $\Rightarrow \gamma_3$ es la recta del punto $(3,0)$ al punto $(3,1)$.\\
