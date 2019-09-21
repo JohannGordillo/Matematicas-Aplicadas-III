@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{amsthm}
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage[most]{tcolorbox}
@@ -89,7 +90,48 @@
         \item \textbf{[Raymundo]}
 
         %Ejercicio 2%
-        \item \textbf{[Johann]}
+        \item Sea $D^* = [0,1]$ x $[0, 1]$ y defínase $T$ en $D^*$ mediante $T(u, v) = (-u^2 - 4u, v).$\\
+        Hallar la imagen $D$.\\
+        ¿Es $T$ inyectiva?\\
+        
+        Tenemos que $D^* = [0,1]$ x $[0,1]$.\\
+        Podemos analizar la frontera de la región y ver cómo se comporta la transformación al ser aplicada sobre éstas curvas:\\\\
+        $c_1(t) = (t, 0)$\\
+        $c_2(t) = (1, t)$\\
+        $c_3(t) = (t, 1)$\\
+        $c_4(t) = (0, t)$\\\\
+        Al aplicar la transformación obténemos las rectas:\\
+        $\gamma_1(t) = T(c_1(t)) = T(t, 0) = (-t^2 + 4t, 0)$\\
+        $\gamma_2(t) = T(c_2(t)) = T(1, t) = (-1 + 4, t) = (3, t)$\\
+		$\gamma_3(t) = T(c_3(t)) = T(t, 1) = (-t^2 + 4t, 1)$\\        
+        $\gamma_4(t) = T(c_4(t)) = T(0, t) = (0, t)$\\
+        con $t \in [0,1]$.\\\\
+        $\Rightarrow \gamma_1$ es la recta del punto $(0,1)$ al punto $(3,1)$.\\
+        $\Rightarrow \gamma_2$ es la recta del punto $(0,0)$ al punto $(0,1)$.\\
+        $\Rightarrow \gamma_3$ es la recta del punto $(3,0)$ al punto $(3,1)$.\\
+        $\Rightarrow \gamma_4$ es la recta del punto $(0,0)$ al punto $(3,0)$.\\
+        Lo que obténemos son cuatro rectas que forman la región $D = [0, 3]$ x $[0, 1]$\\\\       
+        Únicamente falta ver que la transformación sea una inyección. Analizando el comportamiento de la transformación y las regiones $D^*$ y $D$, podemos intuir que sí lo es. Pero hay que dar una demostración formal:
+        \begin{proof}
+        \vspace{0.2cm}
+        Sean $(u,v), (u', v') \in D^*$.\\
+        Supongamos que $T(u, v) = T(u', v')$.\\
+        $\Rightarrow (-u^2 + 4u, v) = (-(u')^2 + 4u', v')$.\\
+        $\therefore -u^2 + 4u = -(u')^2 + 4u'$ y adeáas $v = v'$.\\\\
+        Como $v = v'$, falta probar que $u = u'$.\\
+        Despejando: $-u^2 + 4u + (u')^2 - 4u' = 0$\\
+        Aplicando la fórmula general para ecuaciones de segundo grado con variables\\
+        $a = 1$\\
+        $b = -4$\\
+        $c = -u^2 + 4u$\\
+        obténemos:\\
+        $u' = \frac{4 \pm \sqrt{16 - 4(-u^2 + 4u)}}{2} = 2 \pm \frac{\sqrt{16 + 4 u^2 - 4u}}{2} = 2 \pm \frac{sqrt{4(u-2)^2}}{2}$\\\\
+        $\therefore u' = u$ o $u' = 4 - u$.\\\\
+        Pero sabemos que $u', u \in [0,1]$, por lo que no es posible que $u' = 4-u$\\
+        $\therefore u = u'$\\
+        $\therefore (u, v) = (u', v')$\\\\
+        $\therefore T$ es una inyección.\\
+		\end{proof}          
         
         %Ejercicio 3%
         \item \textbf{[Johann]}
