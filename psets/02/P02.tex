@@ -18,7 +18,7 @@
 
 \usepackage{mathtools}
 \usepackage{tikz}
-\usetikzlibrary{trees,positioning}
+\usetikzlibrary{trees,positioning,babel}
 
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
@@ -259,7 +259,151 @@
         \item \textbf{[Erick]}
         
         %Ejercicio 7%
-        \item \textbf{[Orlando]}  
+        \item Sea $T(u,v) = (x(u,v),y(u,v))$ la aplicación definida por $T(u,v) = (4u,2u+3v)$. Sea $D^*$ el rectangulo $[0,1] \times [1,2]$. Hallar $D=T(D^*)$ \\ y calcular 
+
+            \begin{enumerate}
+                \item $\iint_D{xy}dxdy$
+                \item $\iint_D{(x-y)}dxdy$
+            \end{enumerate}
+
+            \textbf{Solución:}
+
+            Sean las rectas:
+
+            \begin{tabular}{ll}
+                $c_1 = (t,1)$ & $0 \leq t \leq 1$ \\
+                $c_2 = (t,2)$ & $0 \leq t \leq 1$ \\
+                $c_3 = (0,t)$ & $1 \leq t \leq 2$ \\
+                $c_4 = (1,t)$ & $1 \leq t \leq 2$ \\
+            \end{tabular}
+
+            parametrizaciones de los lados del rectangulo $D^*$. \\
+            Al componer las parametrizaciones de los lados del rectángulo con la transformacion tenemos las parametrizaciones de $D$:
+
+            \begin{minipage}[b]{0.5\textwidth}
+                \begin{tabular}{ll}
+                    $T(c_1) = (4t,2t + 3)$ & $0 \leq t \leq 1$ \\
+                    $T(c_2) = (4t,2t + 6)$ & $0 \leq t \leq 1$ \\
+                    $T(c_3) = (0,3t)$ & $1 \leq t \leq 2$ \\
+                    $T(c_4) = (4,2 + 3t)$ & $1 \leq t \leq 2$ \\
+                \end{tabular}
+
+                \vspace{0.3cm}
+                Por lo tanto: $D$ es la región tal que: 
+
+                \begin{tabular}{r@{ $\leq$ }c@{ $\leq$ }l}
+                    $0$ & $u$ & $4$ \\ 
+                    $\frac{u}{2} +3$ & $v$ & $\frac{u}{2}+6$.
+                \end{tabular}
+
+                \vspace{0.3cm}
+                Y su jacbiano es: $\frac{\partial (x,y)}{\partial (u,v)}= 
+                \begin{vmatrix}
+                    4 & 0 \\
+                    2 & 3
+                \end{vmatrix}
+                = 12$
+                \vspace{0.5cm}
+
+            \end{minipage}
+            \begin{minipage}[b]{0.5\textwidth}
+                \begin{tikzpicture}[scale=0.5, every node/.style={scale=0.7}]
+
+                    \draw [<->] (0,4) -- (0,0) -- (2,0);
+                    \node [above] at (0,4) {y};
+                    \node [right] at (2,0) {x};
+
+                    \draw [domain=0:1,variable=\t] plot ({\t},{1});
+                    \draw [domain=0:1,variable=\t] plot ({\t},{2});
+                    \draw [domain=1:2,variable=\t] plot ({1},{\t});
+
+                    \shade [top color=white, bottom color=gray] (0,1) rectangle (1,2);
+                    \node [above] at (0.5,1.2) {$D^*$};
+
+                    \draw [->] (4,4) to [bend left] (8,4);
+                    \node [above] at (6,4.7) {$T$};
+
+                    \draw (1,0) -- (1,-0.2);
+                    \node [below right] at (1,0) {$1$};
+                    \draw [densely dotted] (1,0) -- (1,1);
+
+                    \draw (0,1) -- (-0.2,1);
+                    \node [above left] at (0,1) {$1$};
+
+                    \draw (0,2) -- (-0.2,2);
+                    \node [above left] at (0,2) {$2$};
+
+                    \draw [<->] (10,9) -- (10,0) -- (15,0);
+                    \node [above] at (10,9) {v};
+                    \node [right] at (15,0) {u};
+
+                    \draw [domain=0:1,variable=\t] plot ({4*\t +10},{2*\t + 3});
+                    \draw [domain=0:1,variable=\t] plot ({4*\t +10},{2*\t + 6});
+                    \draw [domain=1:2,variable=\t] plot ({4 +10},{2 + 3*\t});
+
+                    \shade [top color=white, bottom color=gray] (10,3) -- (14,5) -- (14,8) -- (10,6);
+                    \node [above] at (12,5.3) {$D$};
+
+                    \draw (10,3) -- (9.8,3);
+                    \node [above left] at (10,3) {3};
+
+                    \draw (10,5) -- (9.8,5);
+                    \node [above left] at (10,5) {5};
+                    \draw [densely dotted] (14,5) -- (10,5);
+
+                    \draw (10,6) -- (9.8,6);
+                    \node [above left] at (10,6) {6};
+
+                    \draw (10,8) -- (9.8,8);
+                    \node [above left] at (10,8) {8};
+                    \draw [densely dotted] (14,8) -- (10,8);
+
+                    \draw (14,0) -- (14,-0.2);
+                    \draw [densely dotted] (14,5) -- (14,0);
+                    \node [below right] at (14,0) {4};
+
+
+                    \node [below] at (12.5,4) {$T(c_1)$};
+                    \node [above] at (11.5,7) {$T(c_2)$};
+                    \node [right] at (10,4.5) {$T(c_3)$};
+                    \node [right] at (14,6.5) {$T(c_4)$};
+
+                \end{tikzpicture}
+            \end{minipage}
+
+
+            \begin{minipage}[t]{0.5\textwidth}
+                \vspace{0.5cm}
+                $\iint_D{xy}\,dxdy = \\
+                =\int_0^4 \int_{\frac{u}{2}+3}^{\frac{u}{2}+6} (4u)(2u+3v)(12)\,dvdu = \\
+                =12\int_0^4 \int_{\frac{u}{2}+3}^{\frac{u}{2}+6} (8u^2 +12uv)\,dvdu =  \\
+                =12\int_0^4 (8u^2v + 6uv^2)\big|_{\frac{u}{2}+3}^{\frac{u}{2}+6}\,du = \\
+                =12\int_0^4 (42u^2+162u)\,du = \\
+                =12(\frac{42u^3}{3}+\frac{162u^2}{2})\big|_0^4 = \\ 
+                =12(14u^3 + 81u^2)\big|_0^4 = \\
+                =12(14*64 + 81*16) = \\
+                =12(896+1296) = \\
+                =12(2192) = \\
+                =26304$ 
+
+            \end{minipage}
+            \begin{minipage}[t]{0.5\textwidth}
+                \vspace{0.5cm}
+                $\iint_D{(x-y)}\,dxdy = \\
+                \int_0^4 \int_{\frac{u}{2}+3}^{\frac{u}{2}+6} (4u-2u-3v)(12)\,dvdu = \\
+                12\int_0^4 \int_{\frac{u}{2}+3}^{\frac{u}{2}+6} (2u-3v)\,dvdu =  \\
+                12\int_0^4 (2uv-\frac{3v^2}{2})\big|_{\frac{u}{2}+3}^{\frac{u}{2}+6}\,du =  \\
+                12\int_0^4 \frac{1}{2}(39u+135)\,du \\
+                6(\frac{39u^2}{2}+135u)\big|_0^4 = \\
+                6(\frac{39*16}{2}+135*4) = \\
+                6(\frac{624}{2}+540) = \\
+                6(312+540) = \\
+                6(852) = \\
+                5112$
+
+                \vspace{1cm}
+
+            \end{minipage}
         
         %Ejercicio 8%
         \item \textbf{[Orlando]}
