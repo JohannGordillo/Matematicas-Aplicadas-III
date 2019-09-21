@@ -134,7 +134,28 @@
 		\end{proof}          
         
         %Ejercicio 3%
-        \item \textbf{[Johann]}
+        \item Sea $D^* = [0,1]$ x $[0, 1]$ y defínase $T$ en $D^*$ mediante $T(x^*, y^*) = (x^*y^*, x^*).$\\
+        Hallar la imagen $D$.\\
+        ¿Es $T$ inyectiva?\\
+        Si no lo es, ¿se puede quitar un subconjunto a $D^*$ para que $T$ sea inyectiva?\\\\
+        Tenemos que $D^* = [0,1]$ x $[0, 1]$, que es la misma región que en el ejercicio anterior, por lo que obténemos las mismas rectas en la frontera:\\\\
+        $c_1(t) = (t, 0)$\\
+        $c_2(t) = (1, t)$\\
+        $c_3(t) = (t, 1)$\\
+        $c_4(t) = (0, t)$\\\\
+        Al aplicar la transformación obténemos las rectas:\\
+        $\gamma_1(t) = T(c_1(t)) = T(t, 0) = (t(0), t) = (0, t)$\\
+        $\gamma_2(t) = T(c_2(t)) = T(1, t) = (1(t), t) = (t, 1)$\\
+		$\gamma_3(t) = T(c_3(t)) = T(t, 1) = (t(1), t) = (t, t)$\\        
+        $\gamma_4(t) = T(c_4(t)) = T(0, t) = (0(t), 0) = (0, 0)$\\
+        con $t \in [0,1]$.\\\\
+        $\Rightarrow \gamma_1$ es el $eje-y$.\\
+        $\Rightarrow \gamma_2$ es la recta $y = 1$.\\
+        $\Rightarrow \gamma_3$ es la recta $y = x$.\\
+        $\Rightarrow \gamma_4$ es el origen $(0, 0)$.\\
+        Lo que obténemos son tres rectas que forman la región triángular $D$ con vértices $(0,0)$, $(0,1)$ y $(1, 1)$.\\\\   
+        Únicamente falta ver que la transformación sea una inyección. Analizando el comportamiento de la transformación y las regiones $D^*$ y $D$, podemos intuir que no lo es, ya que todos los puntos de la recta $c_4$ son mapeados al origen por la transformación $T$.\\\\
+        Sin embargo, podemos hacer que la transformación sea inyectiva eliminando únicamente a la recta $c_4$ del dominio de la transformación.            
 
         %Ejercicio 4%
         \item \textbf{[Erick]}
