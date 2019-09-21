@@ -406,8 +406,58 @@
             \end{minipage}
         
         %Ejercicio 8%
-        \item \textbf{[Orlando]}
-        
+        \item Calcular
+            $$ \iint_D{\frac{dxdy}{\sqrt{1+x+2y}}}$$
+            Donde $D=[0,1] \times [0,1]$, haciendo $T(u,v) = (u,\frac{v}{2})$ y calculando una integral sobre $D^*$, donde \\ $T(D^*)=D$.
+
+            \textbf{Solución:}
+
+            Sean las rectas:
+
+            \begin{tabular}{ll}
+                $c_1 = (t,0)$ & $0 \leq t \leq 1$ \\
+                $c_2 = (t,1)$ & $0 \leq t \leq 1$ \\
+                $c_3 = (0,t)$ & $0 \leq t \leq 1$ \\
+                $c_4 = (1,t)$ & $0 \leq t \leq 1$ \\
+            \end{tabular}
+
+            parametrizaciones de los lados del rectangulo $D$. \\
+            Al componer las parametrizaciones de los lados del rectángulo con la transformacion tenemos las parametrizaciones de $D^*$:
+
+            \begin{tabular}{ll}
+                $T(c_1) = (t,0)$ & $0 \leq t \leq 1$ \\
+                $T(c_2) = (t,\frac{1}{2})$ & $0 \leq t \leq 1$ \\
+                $T(c_3) = (0,\frac{t}{2})$ & $0 \leq t \leq 1$ \\
+                $T(c_4) = (1,\frac{t}{2})$ & $0 \leq t \leq 1$ \\
+            \end{tabular}
+
+            \vspace{0.3cm}
+            Por lo tanto $D^*= [0,1] \times [0,\frac{1}{2}]$ 
+            
+            \vspace{0.3cm}
+            Y su jacbiano es: $\frac{\partial (x,y)}{\partial (u,v)}= 
+            \begin{vmatrix}
+                1 & 0 \\
+                0 & \frac{1}{2}
+            \end{vmatrix}
+            = \frac{1}{2}$
+            
+            \vspace{0.5cm}
+            $$\iint_D{\frac{dxdy}{\sqrt{1+x+2y}}} = 
+            \int_0^1\int_0^\frac{1}{2} \frac{1}{\sqrt{1+u+v}}\,dvdu$$
+
+            Haciendo cambio de variable con $w=1+u+v$ tenemos: \\
+            $$\int_0^1\int_{u+1}^{u+\frac{3}{2}} \frac{1}{\sqrt{w}}\,dwdu = 
+            \int_0^1 2 \sqrt{w} \big|_{u+1}^{u+\frac{3}{2}} = 
+            2\int_0^1\left(\sqrt{u+\frac{3}{2}} - \sqrt{u+1}\right)\,du$$
+            Ahora haciendo camnbio de variable con $r = u + \frac{3}{2}$ y $s=u+1$ tenemos:
+            $$2\left[\int_0^1\sqrt{u+\frac{3}{2}}\,du - \int_0^1 \sqrt{u+1}\,du\right] =
+            2\left[\int_{\frac{3}{2}}^{\frac{5}{2}}\sqrt{r}\,dr - \int_1^2 \sqrt{s}\,ds\right] =
+            2\left[\frac{2}{3}r^{\frac{3}{2}} \big|_\frac{3}{2}^\frac{5}{2} - \frac{2}{3}s^{\frac{3}{2}}\big|_1^2\right] = $$
+            $$=2\left[\frac{2}{3}r^{\frac{3}{2}} \big|_\frac{3}{2}^\frac{5}{2} - \frac{2}{3}s^{\frac{3}{2}}\big|_1^2\right] = 
+            2\left[\frac{5\sqrt{5}}{3\sqrt{2}} - \sqrt{\frac{3}{2}} - \frac{4\sqrt{2}}{3} + \frac{2}{3} \right] =
+            \frac{10\sqrt{5} - 6\sqrt{3}}{3\sqrt{2}} + \frac{4 + 8\sqrt{2}}{3} $$
+
         %Ejercicio 9%
         \item \textbf{[Alex]}
 
