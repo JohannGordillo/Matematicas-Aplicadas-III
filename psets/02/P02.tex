@@ -193,7 +193,34 @@
         Sin embargo, podemos hacer que la transformación sea inyectiva eliminando únicamente a la recta $c_4$ del dominio de la transformación.\\\\           
 
         %Ejercicio 4%
-        \item \textbf{[Erick]}
+        \item Demostraremos que $$ T(D^*)=\{ x\in\mathbb{R}^3 \mid |x|\leq 1 \}$$. Para esto vemos que 
+        	\begin{equation*}
+        	\begin{split}
+        		T(p,\phi,\theta) &= (p\sin\phi\cos\theta, p\sin\phi\sin\theta, p\cos\phi) \\
+        						 &= p(\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi) \\
+				||T(p,\phi,\theta)|| &= p ||(\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi) || \\
+								 &= p\sqrt{\sin^2\phi\cos^2\theta + \sin^2\phi\sin^2\theta + \cos^2\phi} \\ 
+								 &= p\sqrt{\sin^2\phi(\cos^2\theta + \sin^2\theta) + \cos^2\phi} \\ 
+								 &= p\sqrt{\sin^2\phi + \cos^2\phi} \\
+								 &= p\sqrt{1}
+								 = p \in \left[0,1\right] \\
+								 & \therefore ||T(p,\phi,\theta)|| \in \left[0,1\right] \\
+								 & \therefore T(p,\phi,\theta) \in \{ x\in \mathbb{R}^3 | |x| \leq 1 \}
+        	\end{split}
+        	\end{equation*}
+
+        	Ahora sea (a,b,c) coordenadas de una esfera, entonces $a^2 + b^2 + c^2 = 1$.
+        	Definimos $n = \left| \sqrt{\frac{a^2}{a^2 + b^2}}\right| $ y 
+        	$b = \left|\sqrt{\frac{b^2 + a^2}{a^2 + b^2 + c^2}}\right| = \left|\sqrt{b^2 + a^2}\right|$
+        	luego , $n\in \left[0,1\right]$ y $m\in \left[0,1\right]$, 
+        	por tanto existe $\theta$ y $\phi$ tal que $n = \cos\theta$ y $m = \sin\phi$ luego:
+        	\begin{equation*}
+        	\begin{split}
+        		(\sin\phi\cos\theta, \sin\phi\sin\theta, \cos\phi) &= (mn,\ m\sqrt{1-n^2},\ \sqrt{1-m^2}) \\
+        														   &= (|\sqrt{a^2}|,\ |\sqrt{b^2}|, \ |\sqrt{c^2}|) \\
+        														   &= (a,\ b,\ c)
+        	\end{split}
+        	\end{equation*} 	
 
         %Ejercicio 5%
         \item Determinar el determinante del Jacobiano para las coordenadas esféricas.\\\\
@@ -256,7 +283,28 @@
       	$\therefore J = \rho^2 sin \phi$  es el determinante del jacobiano.\\\\
         
         %Ejercicio 6%
-        \item \textbf{[Erick]}
+        \item Usamos cambio a coordenadas polares para obtener 
+        	  $x = r\cos\theta$, $y = \sin\theta$ y el determinante 
+        	  Jacobiano que en este caso es $r$.
+
+        	  Obtenemos $$\int\int rf(r\cos\theta, r\sin\theta)dr\ d\theta$$,
+        	  a su vez $x^2 + y^2 = r^2\cos^2\theta + r^2\sin^2\theta = r^2$.
+
+        	  Obtenemos los límites de intersección,
+        	  Al ser D el disco unidad, tenemos: $0 \leq r\leq 1, 0 \leq \theta\leq 2\pi$.
+
+        	  \begin{equation*}
+        	  \begin{split}
+        	  	\int_0^1\int_0^{2\pi} re^{r^2} d\theta\ dr 
+        	  	&= \int_0^1\int_0^{2\pi} re^{r^2} d\theta\ dr \\
+        	  	&= \int_0^1 re^{r^2} \int_0^{2\pi}  d\theta\ dr \\
+        	  	&= \int_0^1 re^{r^2} 2\pi\ dr \\
+        	  	&= 2\pi \int_0^1 re^{r^2}\ dr \\
+        	  \end{split}
+        	  \end{equation*}
+
+        	  usando $t = r^3, du = 2r\ dr$
+        	  obtenemos $2\pi/2(e-1) = \pi(e-1).$
         
         %Ejercicio 7%
         \item Sea $T(u,v) = (x(u,v),y(u,v))$ la aplicación definida por $T(u,v) = (4u,2u+3v)$. Sea $D^*$ el rectangulo $[0,1] \times [1,2]$. Hallar $D=T(D^*)$ \\ y calcular 
